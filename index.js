@@ -2,6 +2,6 @@
 
 var config = require('./webpack.config');
 
-module.exports = function(params) {
-    return config(...params);
+module.exports = function() {
+    return config.call(null, ...arguments);
 };
