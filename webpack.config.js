@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 
-module.exports = function(entryPoint, library) {
+module.exports = function(entryPoint, outputName, library) {
     return {
         entry: entryPoint || './lib/index.js',
         output: {
             path: 'dist/',
-            filename: 'index.js',
+            filename:  outputName || 'index.js',
 
             // Export itself to a global var
             libraryTarget: 'var',
