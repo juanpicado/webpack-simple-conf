@@ -1,0 +1,17 @@
+{
+  "name": "webpack-simple-conf",
+  "version": "1.0.0",
+  "description": "webpack simple configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Picado <me@jotadeveloper.com> (http://jotadeveloper.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^1.13.1"
+  },
+  "engines": {
+    "node": ">=5.0"
+  }
+}
