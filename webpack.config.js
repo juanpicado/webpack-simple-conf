@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const path = require('fs');
+const fs = require('fs');
 
 module.exports = function(entryPoint, outputName, library, libraryTarget) {
 
