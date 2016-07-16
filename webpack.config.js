@@ -1,11 +1,18 @@
 const webpack = require('webpack');
 const path = require('path');
+const path = require('fs');
 
 module.exports = function(entryPoint, outputName, library, libraryTarget) {
+
+    // if it doesn't exist then we use dist as base folder
+    if (!fs.accessSync(outputName) && !outputName.startsWith('.')) {
+        outputName = path.normalize('dist', outputName);
+    }
+
     return {
         entry: entryPoint || './lib/index.js',
         output: {
-            path: path.normalize('dist'),
+            path: outputName,
             filename:  outputName || 'index.js',
 
             // Export itself to a global var
