@@ -5,10 +5,10 @@ const fs = require('fs');
 module.exports = function(entryPoint, outputName, library, libraryTarget) {
 
     // if it doesn"t exist then we use dist as base folder
-    if (!fs.accessSync(outputName) && !outputName.startsWith('.')) {
-        outputName = path.normalize('dist', outputName);
+    if (!fs.existsSync(outputName) && !outputName.startsWith('.')) {
+        outputName = path.join(path.normalize('dist'), outputName);
     }
-
+    console.log('outputName', outputName);
     return {
         entry: entryPoint || './lib/index.js',
         output: {
