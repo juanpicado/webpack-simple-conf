@@ -1,17 +1,17 @@
 {
   "name": "webpack-simple-conf",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "webpack simple configuration",
   "main": "index.js",
   "scripts": {
-    "major" : "npm version major",
-    "minor" : "npm version minor",
-    "patch" : "npm version patch",
+    "major": "npm version major",
+    "minor": "npm version minor",
+    "patch": "npm version patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-     "type": "git",
-     "url": "https://github.com/juanpicado/webpack-simple-conf"
+    "type": "git",
+    "url": "https://github.com/juanpicado/webpack-simple-conf"
   },
   "author": "Juan Picado <me@jotadeveloper.com> (http://jotadeveloper.com/)",
   "license": "MIT",
