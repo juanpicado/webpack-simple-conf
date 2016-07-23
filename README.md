@@ -4,6 +4,8 @@ This module helps to reduce the overloaded webpack configuration, dependencies m
 
 No more webpack hell configuration for simple bundles.
 
+	npm install webpack-simple-conf --save-dev
+
 ## Usage
 
 1. Create a file in the root folder `webpack.conf.js` and add the following code.
@@ -18,7 +20,7 @@ No more webpack hell configuration for simple bundles.
     module.exports = webpackConf;
 ````
 
-2. Run webpack in the root folder
+2. Run webpack in the root folder `webpack --config webpack.conf.js`
 3. See output file on `dist/index.min.js`
 
 #### Options
