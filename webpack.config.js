@@ -1,33 +1,24 @@
 const webpack = require('webpack');
 const path = require('path');
 
-module.exports = function(entryPoint, outputName, library, libraryTarget) {
-    // if it doesn"t exist then we use dist as base folder
-    if (!outputName.startsWith('.') || !outputName.startsWith('./')) {
-        outputName = path.normalize(path.join('dist', outputName));
-    } else {
-        outputName = path.normalize(outputName);
-    }
-    return {
-        entry: entryPoint || './lib/index.js',
+/**
+ * Basic webpack configuration
+ * @param entryPoint the js file entry point
+ * @param outputPath the output base path
+ * @param outputName the output file name
+ * @param library Use this, if you are writing a library and want to publish it as single file.
+ * @param libraryTarget Which format to export the library eg: (var, commonjs, amd, umd, commonjs2)
+ */
+module.exports = (entryPoint, outputPath, outputName, library, libraryTarget) => {
+    
+    const baseConf = {
+        entry: entryPoint || './src/index.js',
         output: {
             filename:  outputName || 'index.js',
-            // Export itself to a global var
-            libraryTarget: libraryTarget || 'var',
-
-            // Name of the global var: "Foo"
-            library: library
-        },
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-                compress: {
-                    warnings: false
-                },
-                output: {
-                    comments: false
-                }
-            })
-        ]
+            libraryTarget: libraryTarget || undefined,
+            path: path.normalize(utputPath) || path.normalize(path.join(__dirname, 'dist')),
+            library: library || undefined
+        }
     };
-
+    return baseConf;
 };
