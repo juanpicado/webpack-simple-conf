@@ -16,7 +16,7 @@ module.exports = (entryPoint, outputPath, outputName, library, libraryTarget) =>
         output: {
             filename:  outputName || 'index.js',
             libraryTarget: libraryTarget || undefined,
-            path: path.normalize(utputPath) || path.normalize(path.join(__dirname, 'dist')),
+            path: path.normalize(outputPath) || path.normalize(path.join(__dirname, 'dist')),
             library: library || undefined
         }
     };
